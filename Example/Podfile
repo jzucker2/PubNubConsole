@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PubNubConsole_Example' do
+  pod 'PubNubConsole', :path => '../'
+
+  target 'PubNubConsole_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
