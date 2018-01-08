@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'PubNubConsole'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of PubNubConsole.'
+  s.summary          = 'A modular PubNub debug console.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A debug console for basic PubNub functionality and testing. Can easily be used in your app.
                        DESC
 
   s.homepage         = 'https://github.com/jzucker2/PubNubConsole'
@@ -26,17 +26,18 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jzucker2' => 'jordan.zucker@gmail.com' }
   s.source           = { :git => 'https://github.com/jzucker2/PubNubConsole.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/jzucker2'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'PubNubConsole/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'PubNubConsole' => ['PubNubConsole/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'PubNubConsoleModel' => ['PubNubConsole/Assets/PubNubConsoleModel.xcdatamodeld']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit', 'MapKit'
+  s.dependency 'PubNub', '~> 4.7'
+  s.dependency 'SwiftyKit', '~> 0.4'
 end
